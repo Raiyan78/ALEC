@@ -32,13 +32,8 @@ def build_qsp_unitary(
     theta: float,
     epsilon: float = 0.0,
 ) -> Matrix:
-    """Construct Eq. (2) with multiplicative phase noise phi_j -> phi_j (1 + epsilon).
-
-    The implementation follows the paper's convention directly:
-
-        U_epsilon(theta; phi) = exp(i phi_0 (1 + epsilon) Z)
+    """Construct U_epsilon(theta; phi) = exp(i phi_0 (1 + epsilon) Z)
                                prod_{j=1}^d W(theta) exp(i phi_j (1 + epsilon) Z)
-
     """
 
     if not phases:
