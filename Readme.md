@@ -44,39 +44,7 @@ noisy = build_qsp_unitary(base_phases, theta, epsilon)
 corrected = build_qsp_unitary(corrected_phases, theta, epsilon)
 ```
 
-If you want to sweep the figure-style x-axis `a^2`, use
 
-\[
-a = \cos(\theta), \qquad \theta = \arccos(\sqrt{a^2}).
-\]
 
-Example:
-
-```python
-a2 = 0.8
-theta = np.arccos(np.sqrt(a2))
-```
-
-## Notes on the corrected phase list
-
-The corrected list is a merged QSP sequence. That means the original base list does not necessarily appear as a literal prefix.
-
-If
-
-- `base = (a0, ..., ad)`
-- `recovery = (r0, ..., rs)`
-
-then the merged list is
-
-- `(a0, ..., a{d-1}, ad + r0, r1, ..., rs)`
-
-So it is normal for the last base phase to change after composition.
-
-## Notebooks
-
-- `main.ipynb`: local numerical experiments
-- `benchmark.ipynb`: Qiskit / IBM runtime experiments
-
-The Qiskit hardware side is separate from the core math code. The recovery construction itself only depends on NumPy.
 
 
