@@ -93,7 +93,7 @@ def fit_first_order_error_profile(
     tol: float = 1e-5,
     j_max_threshold: float | None = None,
 ) -> FirstOrderErrorProfileFit:
-    """Fit the first-order X/Y error profile in the even-power cosine basis."""
+    """Fit the first-order X/Y error profile in the even-power cosine basis use Definition S1.2 (Canonical expansion)"""
 
     if not phases:
         raise ValueError("phases must contain at least one angle")
@@ -167,7 +167,7 @@ def recovery_phase_list_k1_degreewise(
     tol_relative: float = 1e-4,
     theta_grid: Sequence[float] | None = None,
 ) -> DegreewiseRecoveryResult:
-    """Build the k=1 recovery list by cancelling the top surviving degree."""
+    """Build the k=1 recovery list by cancelling the top surviving degree"""
 
     phases = tuple(float(phase) for phase in phases)
     theta_grid = None if theta_grid is None else tuple(float(theta) for theta in theta_grid)
